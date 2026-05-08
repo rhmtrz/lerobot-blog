@@ -19,13 +19,18 @@ If the user's request doesn't clearly match a mode, ask once which they want.
 
 Only these slugs are valid for the series. Never invent new slugs without explicit user approval.
 
-| # | Topic                       | Slug                              | Emoji | Suggested topics                                        |
-|---|-----------------------------|-----------------------------------|-------|---------------------------------------------------------|
-| 1 | Installation & Calibration  | `lerobot-install-and-calibration` | 🤖    | `["lerobot","robotics","huggingface","python","setup"]` |
-| 2 | Teleop                      | `lerobot-teleop-control`          | 🎮    | `["lerobot","robotics","teleop","huggingface","python"]`|
-| 3 | Record dataset              | `lerobot-record-dataset`          | 📝    | `["lerobot","robotics","dataset","huggingface","ai"]`   |
-| 4 | Train policy                | `lerobot-train-policy`            | 🧠    | `["lerobot","ai","machinelearning","pytorch","robotics"]`|
-| 5 | Run trained model           | `lerobot-run-trained-model`       | 🚀    | `["lerobot","ai","inference","robotics","huggingface"]` |
+| # | Topic                       | Slug                              | Emoji | Kind     | Suggested topics                                         |
+|---|-----------------------------|-----------------------------------|-------|----------|----------------------------------------------------------|
+| 0 | Primer (env, glossary, logs)| `lerobot-primer-and-tips`         | 📚    | primer   | `["lerobot","robotics","huggingface","ai","python"]`     |
+| 1 | Installation & Calibration  | `lerobot-install-and-calibration` | 🤖    | tutorial | `["lerobot","robotics","huggingface","python","setup"]`  |
+| 2 | Teleop                      | `lerobot-teleop-control`          | 🎮    | tutorial | `["lerobot","robotics","teleop","huggingface","python"]` |
+| 3 | Record dataset              | `lerobot-record-dataset`          | 📝    | tutorial | `["lerobot","robotics","dataset","huggingface","ai"]`    |
+| 4 | Train policy                | `lerobot-train-policy`            | 🧠    | tutorial | `["lerobot","ai","machinelearning","pytorch","robotics"]`|
+| 5 | Run trained model           | `lerobot-run-trained-model`       | 🚀    | tutorial | `["lerobot","ai","inference","robotics","huggingface"]`  |
+
+**Kinds:**
+- `tutorial` — step-by-step doing-the-thing posts (parts 1–5). Use `template-tutorial-en.md` / `template-tutorial-jp.md`.
+- `primer` — reference / glossary / tips that other articles link back to (part 0). Use `template-primer-en.md` / `template-primer-jp.md`.
 
 ## Scaffold mode
 
@@ -33,13 +38,17 @@ Steps:
 
 1. Identify the slug from the user's request (match against the table above).
 2. Refuse if `articles/<slug>.md` or `drafts/en/<slug>.md` already exists — ask whether to overwrite.
-3. Read `.claude/skills/zenn-blog/template-en.md` and write to `drafts/en/<slug>.md`. Replace:
-   - `<Title in English — replace before commit>` with a sensible English title (user can edit).
+3. Pick the template pair based on the slug's **kind** column:
+   - `tutorial` → `template-tutorial-en.md` + `template-tutorial-jp.md`
+   - `primer` → `template-primer-en.md` + `template-primer-jp.md`
+4. Read the EN template and write to `drafts/en/<slug>.md`. Replace:
+   - `<English title — replace before commit>` with a sensible English title (user can edit).
    - `emoji` and `topics` with the values from the table.
-   - Series part number `X` with the article number, and prev/next slug placeholders.
-4. Read `.claude/skills/zenn-blog/template-jp.md` and write to `articles/<slug>.md` with the same frontmatter values (Japanese title placeholder kept).
-5. Create `images/lerobot/<slug>/.gitkeep`.
-6. Tell the user the two files exist and to fill in the English draft first.
+   - For tutorials: series part number `X` with the article number, and prev/next slug placeholders.
+   - For the primer: leave the "Part 0 (prerequisite reference)" callout as-is.
+5. Read the JP template and write to `articles/<slug>.md` with the same frontmatter values (Japanese title placeholder kept).
+6. Create `images/lerobot/<slug>/.gitkeep`.
+7. Tell the user the two files exist and to fill in the English draft first.
 
 Never set `published: true` during scaffolding.
 
@@ -78,7 +87,8 @@ Report findings as a checklist; fix only what the user approves.
 
 ## Prefer existing helpers
 
-- Templates: `.claude/skills/zenn-blog/template-en.md`, `template-jp.md`.
+- Tutorial templates: `.claude/skills/zenn-blog/template-tutorial-en.md`, `template-tutorial-jp.md`.
+- Primer templates: `.claude/skills/zenn-blog/template-primer-en.md`, `template-primer-jp.md`.
 - Style rules: `.claude/skills/zenn-blog/translation-style-guide.md`.
 - Don't restate template content in new files — reference these instead.
 
@@ -87,4 +97,4 @@ Report findings as a checklist; fix only what the user approves.
 - Does not run `git add` / `git commit` / `git push`.
 - Does not flip `published: true`.
 - Does not write actual tutorial content from scratch — the user drafts the English source; this skill scaffolds, translates, and lints.
-- Does not create new series entries beyond the 5 locked slugs.
+- Does not create new series entries beyond the 6 locked slugs (primer + 5 tutorials).

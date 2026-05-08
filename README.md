@@ -27,13 +27,16 @@ See [`.claude/skills/zenn-blog/SKILL.md`](.claude/skills/zenn-blog/SKILL.md) for
 
 ## Planned series
 
-| # | Topic                          | Slug                              | Emoji |
-|---|--------------------------------|-----------------------------------|-------|
-| 1 | Installation & Calibration     | `lerobot-install-and-calibration` | 🤖    |
-| 2 | Teleop                         | `lerobot-teleop-control`          | 🎮    |
-| 3 | Record dataset                 | `lerobot-record-dataset`          | 📝    |
-| 4 | Train policy                   | `lerobot-train-policy`            | 🧠    |
-| 5 | Run trained model              | `lerobot-run-trained-model`       | 🚀    |
+| # | Topic                                | Slug                              | Emoji | Kind     |
+|---|--------------------------------------|-----------------------------------|-------|----------|
+| 0 | Primer — env, glossary, logs, tips   | `lerobot-primer-and-tips`         | 📚    | primer   |
+| 1 | Installation & Calibration           | `lerobot-install-and-calibration` | 🤖    | tutorial |
+| 2 | Teleop                               | `lerobot-teleop-control`          | 🎮    | tutorial |
+| 3 | Record dataset                       | `lerobot-record-dataset`          | 📝    | tutorial |
+| 4 | Train policy                         | `lerobot-train-policy`            | 🧠    | tutorial |
+| 5 | Run trained model                    | `lerobot-run-trained-model`       | 🚀    | tutorial |
+
+**Part 0 (the primer)** is a reference/cheat-sheet article — environment versions, hardware quick-reference (USB, motor IDs, cameras), data paths, glossary (episode, policy, dataset…), how to read the CLI logs, and common gotchas. Tutorials 1–5 link back to it instead of re-explaining these basics.
 
 ## Local setup
 
