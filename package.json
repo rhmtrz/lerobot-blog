@@ -1,0 +1,11 @@
+{
+  "name": "lerobot-blog",
+  "private": true,
+  "scripts": {
+    "preview": "zenn preview",
+    "new:article": "zenn new:article"
+  },
+  "devDependencies": {
+    "zenn-cli": "^0.4.7"
+  }
+}
