@@ -180,7 +180,7 @@ flowchart LR
 
 ## LeRobot を効率よく学ぶための Tips
 
-- **CLI のフラグだけ全部読んでおく**: `lerobot record --help` や `lerobot train --help`。最初は意味不明でも、目を通しておくと後で「あの挙動は◯◯フラグだったな」と思い出せます。
+- **CLI のフラグ全部読んでおく**: `lerobot record --help` や `lerobot train --help`。最初は意味不明でも、目を通しておくと後で「あの挙動は◯◯フラグだったな」と思い出せます。
 - **トレーニング前にデータセットを確認する**: `lerobot.scripts.visualize_dataset` で再生して、想定どおりの記録になっているか見てから学習に進みます。
 - **最小構成でまず通す**: エピソード数・バッチサイズ・トレーニングステップを最小にして、パイプライン全体をエンドツーエンドで一度通してから本番設定に上げます。
 - **ログを保存する**: `tee` で録画・学習のログを必ずファイルに残してください。数日後に何かが壊れたとき、過去ログが救命具になります。
@@ -189,5 +189,5 @@ flowchart LR
 
 - [LeRobot リポジトリ](https://github.com/huggingface/lerobot)
 - [LeRobot examples](https://github.com/huggingface/lerobot/tree/main/examples)
-- [Hugging Face データセットビューア](https://huggingface.co/datasets)
+- [Hugging Face データセットビューア](https://huggingface.co/docs/dataset-viewer/index)
 - シリーズ第 1〜5 回(公開され次第ここにリンクします)
