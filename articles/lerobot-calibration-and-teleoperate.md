@@ -3,7 +3,8 @@ title: "LeRobot SO-101 アームのキャリブレーションとテレオペレ
 emoji: "🤖"
 type: "tech"
 topics: ["lerobot", "robotics", "huggingface", "python", "so101"]
-published: false
+published: true
+publication_name: "adawarp"
 ---
 
 ## はじめに
