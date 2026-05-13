@@ -4,6 +4,7 @@ emoji: "🔧"
 type: "tech"
 topics: ["lerobot", "robotics", "so100", "hardware", "diy"]
 published: false
+publication_name: "adawarp"
 ---
 
 > **関連記事:** [LeRobot プライマー(第 0 回)](./lerobot-primer-and-tips) ・ [インストールとキャリブレーション(第 1 回)](./lerobot-install-and-calibration)

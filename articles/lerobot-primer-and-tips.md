@@ -4,6 +4,7 @@ emoji: "📚"
 type: "tech"
 topics: ["lerobot", "robotics", "huggingface", "ai", "python"]
 published: true
+publication_name: "adawarp"
 ---
 
 > **シリーズ:** LeRobot チュートリアル — 第 0 回(前提知識リファレンス)
@@ -20,7 +21,7 @@ LeRobot を始めたときに「最初から知っていれば詰まらなかっ
 | OS | Ubuntu 22.04 |
 | Python | 3.10 以上 |
 | パッケージマネージャ | `uv`  |
-| ハードウェア | `SO-100` |
+| ロボットアーム | `SO-101` |
 
 セットアップコマンド:
 
@@ -52,7 +53,7 @@ flowchart LR
   L -->|関節位置を送信| F["Follower Arm<br/>(タスク実行・実際のロボット)"]
 ```
 
-SO-100 の場合、Leader と Follower は見た目はよく似ていますが、Leader にはグリッパー操作用のレバーが付いており、人間が握って動かせるようになっています。
+SO-101 の場合、Leader と Follower は見た目はよく似ていますが、Leader にはグリッパー操作用のレバーが付いており、人間が握って動かせるようになっています。
 
 ### USB とシリアルポート
 
