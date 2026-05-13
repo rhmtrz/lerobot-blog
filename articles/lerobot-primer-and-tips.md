@@ -7,6 +7,8 @@ published: true
 publication_name: "adawarp"
 ---
 
+![LeRobot を始める前に](/images/lerobot/lerobot-primer-and-tips/cover-image.png)
+
 > **シリーズ:** LeRobot チュートリアル — 第 0 回(前提知識リファレンス)
 > 最初に一度読んで、以降の各記事から参照する位置づけです。
 
