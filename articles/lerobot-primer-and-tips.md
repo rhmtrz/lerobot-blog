@@ -39,6 +39,21 @@ uv pip install lerobot
 
 ## ハードウェアのクイックリファレンス
 
+### Leader と Follower
+
+LeRobot のテレオペは **2 本のアーム** を使う構成です。役割が違うので最初に区別しておきます。
+
+- **Leader Arm(リーダーアーム)**: 人間が手でつかんで動かす側のアーム。サーボは位置を読み取るモードで動作し、関節角度を逐次取得して Follower に送ります。
+- **Follower Arm(フォロワーアーム)**: 受信した関節位置に追従して実際にタスクを実行する側。これが「ロボット」本体で、エピソードの録画でも推論でも最終的に動作するのはこちらです。
+
+```mermaid
+flowchart LR
+  H["人間"] -->|手で動かす| L["Leader Arm<br/>(操作用)"]
+  L -->|関節位置を送信| F["Follower Arm<br/>(タスク実行・実際のロボット)"]
+```
+
+SO-100 の場合、Leader と Follower は見た目はよく似ていますが、Leader にはグリッパー操作用のレバーが付いており、人間が握って動かせるようになっています。
+
 ### USB とシリアルポート
 
 LeRobot がロボットを認識するときのデバイスパスです。ロボットアームは Linux では `/dev/ttyACM*` または `/dev/ttyUSB*` として見えます。
@@ -120,9 +135,9 @@ LeRobot がデフォルトで使うパスです。
 
 **Episode duration** — 1 エピソードの最大時間(秒)。この時間に達すると自動的に録画が止まります。Episode duration が経つまで待たずに、途中で右矢印キーを押すことで録画を停止することもできます。
 
-**Dataset** — 複数のエピソード(カメラ映像、モーター位置、アクション)+ メタデータを Hugging Face 互換のフォーマットで保存したもの。Hub にプッシュできます。
+**Dataset** — 複数のエピソード(カメラ映像、モーター位置、アクション)+ メタデータを [LeRobotDataset](https://huggingface.co/docs/lerobot/lerobot-dataset-v3) という LeRobot 専用のフォーマットで保存したもの。Hugging Face の標準データセット形式ではありませんが、Hub はフォルダ単位で受け入れるためそのままプッシュできます。
 
-**Teleop** — リーダー側デバイス(別のアームやジョイスティック)でフォロワー側ロボットをリアルタイムに動かすこと。デモンストレーション収集に使います。
+**Teleop** — Leader Arm を人間が動かし、Follower Arm がそれにリアルタイムに追従する操作方法。デモンストレーション収集に使います。
 
 **Policy** — observation → actionを学習したモデル。LeRobot では ACT、Diffusion Policy、TDMPC、Pi0 などがあります。
 
