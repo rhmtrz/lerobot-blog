@@ -3,7 +3,7 @@ title: "LeRobot — カメラ設定とエピソードデータセットの録画
 emoji: "📝"
 type: "tech"
 topics: ["lerobot", "robotics", "dataset", "huggingface", "ai"]
-published: false
+published: true
 publication_name: "adawarp"
 ---
 

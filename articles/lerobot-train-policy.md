@@ -3,7 +3,7 @@ title: "LeRobot — 録画したデータセットでポリシーをトレーニ
 emoji: "🧠"
 type: "tech"
 topics: ["lerobot", "ai", "machinelearning", "pytorch", "robotics"]
-published: false
+published: true
 publication_name: "adawarp"
 ---
 
