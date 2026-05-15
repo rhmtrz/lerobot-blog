@@ -7,7 +7,7 @@ published: true
 publication_name: "adawarp"
 ---
 
-![SO-101 アームのキャリブレーションとテレオペレーション](/images/lerobot/lerobot-calibration-and-teleoperate/eye-catch.PNG)
+![SO-101 アームのキャリブレーションとテレオペレーション](/images/lerobot/lerobot-calibration-and-teleoperate/eye-catch.png)
 
 ## はじめに
 
@@ -99,7 +99,7 @@ Move my_follower_arm SOFollower to the middle of its range of motion and press E
 
 このとき、アームを下図のように可動域のおおよそ中央のポーズに合わせてから Enter を押します。
 
-![キャリブレーション初期位置: アームを可動域の中央に置いた状態](/images/lerobot/lerobot-calibration-and-teleoperate/initial-pos.PNG)
+![キャリブレーション初期位置: アームを可動域の中央に置いた状態](/images/lerobot/lerobot-calibration-and-teleoperate/initial-pos.png)
 
 続いて画面の指示にしたがって各関節を可動域全体に動かし、限界位置で Enter を押します。各関節をどこまで動かせばよいかは、Hugging Face 公式の[キャリブレーション動画](https://huggingface.co/docs/lerobot/so101#calibration-video)を見ると一発でイメージがつかめます。
 
@@ -168,7 +168,7 @@ chmod +x scripts/teleoperate.sh
 
 実際に leader を動かしたときの follower の追従の様子はこんな感じです。
 
-![leader を手で動かすと follower がリアルタイムに追従する](/images/lerobot/lerobot-calibration-and-teleoperate/IMG_8176.GIF)
+![leader を手で動かすと follower がリアルタイムに追従する](/images/lerobot/lerobot-calibration-and-teleoperate/IMG_8176.gif)
 
 動作確認のチェック項目:
 
