@@ -7,6 +7,8 @@ published: true
 publication_name: "adawarp"
 ---
 
+![SO-101 アームのキャリブレーションとテレオペレーション](/images/lerobot/lerobot-calibration-and-teleoperate/eye-catch.PNG)
+
 ## はじめに
 
 この記事では、SO-101 アームを LeRobot で動かすための **キャリブレーション** と **テレオペレーション(teleop)** の手順を、はじめて触る人向けにまとめます。LeRobot 本体のインストールはすでに済んでいる前提です(`lerobot --help` が通る状態)。
@@ -89,7 +91,19 @@ chmod +x scripts/calibrate.sh
 ./scripts/calibrate.sh --follower     # follower (/dev/ttyACM1)
 ```
 
-画面の指示にしたがって各関節を可動域全体に動かし、限界位置で Enter を押します。完了するとキャリブレーションファイルが以下の場所に保存されます。
+実行すると、まずアームを可動域の中央に持っていくよう促されます。
+
+```text
+Move my_follower_arm SOFollower to the middle of its range of motion and press ENTER....
+```
+
+このとき、アームを下図のように可動域のおおよそ中央のポーズに合わせてから Enter を押します。
+
+![キャリブレーション初期位置: アームを可動域の中央に置いた状態](/images/lerobot/lerobot-calibration-and-teleoperate/initial-pos.PNG)
+
+続いて画面の指示にしたがって各関節を可動域全体に動かし、限界位置で Enter を押します。各関節をどこまで動かせばよいかは、Hugging Face 公式の[キャリブレーション動画](https://huggingface.co/docs/lerobot/so101#calibration-video)を見ると一発でイメージがつかめます。
+
+完了するとキャリブレーションファイルが以下の場所に保存されます。
 
 ```
 ~/.cache/huggingface/lerobot/calibration/<robot.id>.json
@@ -151,6 +165,10 @@ chmod +x scripts/teleoperate.sh
 ```
 
 実行すると LeRobot がアームの接続とキャリブレーションを確認し、teleop のループに入ります。停止するときは `Ctrl + C` です。
+
+実際に leader を動かしたときの follower の追従の様子はこんな感じです。
+
+![leader を手で動かすと follower がリアルタイムに追従する](/images/lerobot/lerobot-calibration-and-teleoperate/IMG_8176.GIF)
 
 動作確認のチェック項目:
 
