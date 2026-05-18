@@ -168,7 +168,7 @@ chmod +x scripts/teleoperate.sh
 
 実際に leader を動かしたときの follower の追従の様子はこんな感じです。
 
-![leader を手で動かすと follower がリアルタイムに追従する](/images/lerobot/lerobot-calibration-and-teleoperate/IMG_8176.gif)
+![leader を手で動かすと follower がリアルタイムに追従する](/images/lerobot/lerobot-calibration-and-teleoperate/IMG_8176.gif =550x310)
 
 動作確認のチェック項目:
 
